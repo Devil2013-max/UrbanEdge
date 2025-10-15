@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanEdge - Men's Accessories</title>
+  <style>
+    /* ===== General Styles ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background: #f9f9f9; color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== Header ===== */
+    header { background: #111; color: #fff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { font-size: 1.8rem; letter-spacing: 2px; font-weight: 600; }
+    nav ul { display: flex; gap: 20px; list-style: none; }
+    nav ul li a { color: #fff; transition: color 0.3s; }
+    nav ul li a:hover { color: #ff7b54; }
+
+    /* ===== Hero ===== */
+    .hero { height: 100vh; background: url('https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
+    .hero h2 { font-size: 3.5rem; background: rgba(0,0,0,0.6); padding: 20px 40px; border-radius: 10px; }
+
+    /* ===== Products ===== */
+    .products { padding: 50px 80px; }
+    .products h2 { text-align: center; font-size: 2.5rem; margin-bottom: 30px; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-8px); }
+    .card img { width: 100%; height: 220px; object-fit: cover; }
+    .card h3 { padding: 15px; font-size: 1.2rem; }
+    .card p { padding: 0 15px 15px; font-size: 0.95rem; color: #666; }
+    .card button { background: #111; color: #fff; border: none; padding: 10px 20px; margin: 0 15px 20px; border-radius: 8px; cursor: pointer; transition: background 0.3s; }
+    .card button:hover { background: #ff7b54; }
+
+    /* ===== Reviews ===== */
+    .reviews { background: #fff; padding: 50px 80px; }
+    .reviews h2 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
+    .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .review-card { background: #f0f0f0; padding: 20px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+
+    /* ===== Contact & Delivery ===== */
+    .contact, .delivery { background: #111; color: #fff; padding: 50px 80px; text-align: center; }
+    form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+    input, textarea, select { padding: 12px; border: none; border-radius: 6px; outline: none; font-size: 1rem; }
+    button.submit { background: #ff7b54; color: #fff; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-size: 1rem; transition: background 0.3s; }
+    button.submit:hover { background: #e45a32; }
+
+    /* ===== Footer ===== */
+    footer { background: #000; color: #fff; text-align: center; padding: 15px; font-size: 0.9rem; }
+
+    /* ===== Login Modal ===== */
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; }
+    .modal-content { background: #fff; padding: 30px; border-radius: 10px; width: 300px; text-align: center; }
+    .close { float: right; cursor: pointer; font-size: 20px; color: red; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>UrbanEdge</h1>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#delivery">Delivery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" id="loginBtn">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <h2>Elevate Your Style with UrbanEdge</h2>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <h2>Our Accessories Collection</h2>
+    <div class="product-grid">
+      <!-- 20 Product Cards -->
+      <div class="card"><img src="https://media.cybermart.pk/cybermart/Ven0061/Img_1723114276674.jpg"><h3>Luxury Wrist Watch</h3><p>Classic timepiece.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://daling.pk/cdn/shop/products/vintage-men-leather-wallet-short-slim-ma_description-0.jpg?v=1675929372"><h3>Leather Wallet</h3><p>Handcrafted wallet.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjkL9cC5WjvUmuvj4AQZvodEc511RpMiTzQw&s"><h3>Bracelet</h3><p>Minimalist bracelet.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ322uG6zKkecN4hD7JlMeau-ILSMkaGmW43A&s"><h3>Silver Ring</h3><p>Bold design.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJsUL-ScX8jMTy81u7Op0kOdO4YDVLDDRUkg&s"><h3>Leather Belt</h3><p>Polished buckle.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://5.imimg.com/data5/ANDROID/Default/2022/7/PK/GH/QJ/19051907/product-jpeg.jpg"><h3>Sunglasses</h3><p>UV protection shades.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://thecutprice.com/cdn/shop/files/17_cfceca1c-af2e-43db-8950-d8494b367736.jpg?v=1682779973"><h3>Cufflinks</h3><p>Elegant style.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4aEm7LGZUsUA5MTDJe0DKqKZanLL3mAwS2w&s"><h3>Messenger Bag</h3><p>Work & travel.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgPZ5LlUwxHDE_s4c9-F9iBhBdKvDUYNR1Q&s"><h3>Tie Set</h3><p>Silk premium ties.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://5.imimg.com/data5/SELLER/Default/2024/9/449799940/WX/YH/ZD/97660968/mens-sport-cap.jpg"><h3>Cap</h3><p>Casual wear cap.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrz50YposKILKByFcxCRLO6XNrqFW5V4kpPw&s"><h3>Backpack</h3><p>Durable backpack.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="data:image/jpeg;base64,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"><h3>Leather Gloves</h3><p>Winter style.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6oSBXEjTEHNrSqdYI6OGDfZ9lDarYSUp06A&s"><h3>Sneakers</h3><p>Everyday comfort.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFjKOGLeIiLkwuPvRRA2h7hi6eeMasL1MG5Q&s"><h3>Scarf</h3><p>Soft wool scarf.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://enemmall.com/cdn/shop/files/4105097.jpg?v=1757333033"><h3>Perfume</h3><p>Luxury fragrance.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLlk_QSKy-H0NbsMVWrabnhCRBqQnTWaZeRg&s"><h3>Casual Watch</h3><p>Daily wear.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd9qtgC1B5n2CK5jhV-oDMzFrtbiis48Go9g&s"><h3>Sports Cap</h3><p>Active lifestyle.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://5.imimg.com/data5/SELLER/Default/2024/8/443089867/XV/TY/EP/80765114/men-s-jewellery-gold-chain-for-men-boys-geometric-stainless-steel-black.jpeg"><h3>Chain Necklace</h3><p>Bold style.</p><button>Add to Cart</button></div>
+      <div class="card"><img src="https://img.drz.lazcdn.com/static/pk/p/0388eea19637d5ec907681bde605510a.jpg_720x720q80.jpg"><h3>Gaming Headphones</h3><p>Wireless comfort.</p><button>Add to Cart</button></div>
+    </div>
+  </section>
+
+  <!-- Delivery Form -->
+  <section class="delivery" id="delivery">
+    <h2>Delivery Information</h2>
+    <form id="deliveryForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="text" placeholder="Address" required>
+      <input type="text" placeholder="City" required>
+      <input type="text" placeholder="Postal Code" required>
+      <select required>
+        <option value="">Select Delivery Option</option>
+        <option>Standard (5-7 Days)</option>
+        <option>Express (2-3 Days)</option>
+        <option>Same Day</option>
+      </select>
+      <button type="submit" class="submit">Place Order</button>
+    </form>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews" id="reviews">
+    <h2>What Our Customers Say</h2>
+    <div class="review-grid">
+      <div class="review-card"><h4>Mujeeba Rani.</h4><p>"The wrist watch is stunning!"</p></div>
+      <div class="review-card"><h4>Nani zaiba.</h4><p>"The wallet feels premium."</p></div>
+      <div class="review-card"><h4>Raziq.</h4><p>"Messenger bag is perfect!"</p></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer><p>© 2025 UrbanEdge. All rights reserved.</p></footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Contact form
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault(); alert("Thank you for contacting us!"); this.reset();
+    });
+
+    // Delivery form
+    document.getElementById("deliveryForm").addEventListener("submit", function(e){
+      e.preventDefault(); alert("Your order has been placed successfully!"); this.reset();
+    });
+
+    // Login modal
+    const modal = document.getElementById("loginModal");
+    document.getElementById("loginBtn").onclick = () => modal.style.display = "flex";
+    document.getElementById("closeModal").onclick = () => modal.style.display = "none";
+    window.onclick = e => { if(e.target == modal) modal.style.display = "none"; };
+
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault(); alert("Login successful!"); modal.style.display = "none"; this.reset();
+    });
+  </script>
+</body>
+</html>
